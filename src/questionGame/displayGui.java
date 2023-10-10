@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class displayGui  extends JFrame{
+    String stateOfMenu = "menu";
+    
     public static void initMenu(){
         JFrame frame = new JFrame("Question Game");
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
@@ -19,9 +21,14 @@ public class displayGui  extends JFrame{
         title.setVerticalTextPosition(JLabel.BOTTOM);
         title.setHorizontalTextPosition(JLabel.CENTER);
 
-        JButton button = new JButton("Button");
+        JButton button = new JButton("Discrete Maths");
+        JButton button2 = new JButton("Computer Science Fundamentals");
+        JButton button3 = new JButton("Computer Organisation");
+
         topPanel.add(title);
         bottomPanel.add(button);
+        bottomPanel.add(button2);
+        bottomPanel.add(button3);
 
 
         frame.getContentPane().add(topPanel, BorderLayout.NORTH);
