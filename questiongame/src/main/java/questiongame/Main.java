@@ -10,9 +10,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         database databaseController = new database();
 
-        MongoDatabase mongoDB = databaseController.mongoClient.getDatabase("questionGame");
-        MongoCollection<Document> usersCollection = mongoDB.getCollection("users");
-
-        System.out.println(usersCollection);
+        databaseController.createUser("josh", "s");
     }
 }
