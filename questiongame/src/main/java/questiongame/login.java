@@ -1,7 +1,13 @@
-package questionGame;
+package questiongame;
 
 //importing java package to take user inputs
 import java.util.Scanner;
+import static com.mongodb.client.model.Filters.eq;
+import org.bson.Document;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 
 //creating the main class
 public class login {
@@ -9,6 +15,8 @@ public class login {
         //calling in the 'menu' method
         menu();
         
+        String currentUser = database.createUser("sl", "og");  
+        System.out.println(currentUser);
         
     }
     public static void menu(){
