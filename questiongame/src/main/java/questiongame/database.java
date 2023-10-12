@@ -13,19 +13,21 @@ public class database {
     String uri = "mongodb+srv://sloggo:sloggo@questiongame.ivpo6ff.mongodb.net/?retryWrites=true&w=majority";
     MongoClient mongoClient = MongoClients.create(uri);
 
-    public static void createUser(String usernameToCreate, String passwordToCreate){
+    public static String createUser(String usernameToCreate, String passwordToCreate){
         database dBController = new database();
         MongoDatabase mongoDB = dBController.mongoClient.getDatabase("questionGame");
         MongoCollection<Document> usersCollection = mongoDB.getCollection("users");
 
-        System.out.println(usersCollection);
         int[] scores = {};
 
+        ObjectId newUserId = new ObjectId();
+
         usersCollection.insertOne(new Document()
-            .append("userID", new ObjectId())
+            .append("userId", newUserId)
             .append("username", usernameToCreate)
             .append("password", passwordToCreate)
-            .append("scores", scores)
         );
+
+        return newUserId.toString();
     }
 }

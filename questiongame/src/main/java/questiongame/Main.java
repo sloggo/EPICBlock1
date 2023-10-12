@@ -8,8 +8,7 @@ import com.mongodb.client.MongoDatabase;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        database databaseController = new database();
-
-        databaseController.createUser("josh", "s");
+        String currentUser = database.createUser("sl", "og");  
+        System.out.println(currentUser);
     }
 }
