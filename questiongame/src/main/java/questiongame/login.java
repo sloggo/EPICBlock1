@@ -13,11 +13,7 @@ import com.mongodb.client.MongoDatabase;
 public class login {
     public static void main(String[] args){
         //calling in the 'menu' method
-        menu();
-        
-        String currentUser = database.createUser("sl", "og");  
-        System.out.println(currentUser);
-        
+        menu();        
     }
     public static void menu(){
         Scanner scanner = new Scanner(System.in);
@@ -51,6 +47,8 @@ public class login {
             System.out.println("Error. Please input a password.");
             }else {
                 System.out.println("Sign up successful!");
+
+                String newUser = database.createUser(newUserName, newPassword);
             }
         } 
 
