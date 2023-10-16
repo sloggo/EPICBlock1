@@ -39,19 +39,21 @@ public class database {
         MongoDatabase mongoDB = dBController.mongoClient.getDatabase("questionGame");
         MongoCollection<Document> usersCollection = mongoDB.getCollection("users");
 
-        Bson filterUser = eq("username", user); 
-        Bson filterPass = eq("password", pass);// look for a user with a matching username and pass
+        // Create separate filters for "username" and "password"
+        Bson usernameFilter = Filters.eq("username", user);
+        Bson passwordFilter = Filters.eq("password", pass);
 
-        Bson filter = Filters.and(filterUser, filterPass); 
+        // Combine the filters using the Filters.and method
+        Bson filter = Filters.and(usernameFilter, passwordFilter);
+        String userId = "";
 
-        usersCollection.find(filter).map(doc -> { // if both user and pass match
 
-            System.out.println(doc.toJson());
-            System.out.println("Logged in database");
-            System.out.println(doc.get("_id").toString());
-            return "";
-        });
+        Document doc = usersCollection.find(filter).first();
 
-        return "";
+        System.out.println(doc.toJson());
+        System.out.println("Logged in database");
+        userId = doc.get("_id").toString();
+
+        return userId;
     }
 }
