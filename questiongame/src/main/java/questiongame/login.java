@@ -11,14 +11,7 @@ import com.mongodb.client.MongoDatabase;
 
 //creating the main class
 public class login {
-    public static void main(String[] args){
-        //calling in the 'menu' method
-        menu();
-        
-        String currentUser = database.createUser("sl", "og");  
-        System.out.println(currentUser);
-        
-    }
+    
     public static void menu(){
         Scanner scanner = new Scanner(System.in);
         //offering the user the choice to sign up or login
@@ -35,7 +28,7 @@ public class login {
         }
 
     }
-    //method 'login' created for first time users
+    //method 'signup' created for first time users
     public static void signup(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a username: ");
@@ -51,6 +44,8 @@ public class login {
             System.out.println("Error. Please input a password.");
             }else {
                 System.out.println("Sign up successful!");
+
+                String newUser = database.createUser(newUserName, newPassword);
             }
         } 
 
@@ -70,6 +65,7 @@ public class login {
                 System.out.println("Error. Please enter your password");
             }else {
                 System.out.print("Login successful!");
+                String newUser = database.logIn(username, password);
             }
         }
     }
