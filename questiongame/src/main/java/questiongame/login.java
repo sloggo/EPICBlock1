@@ -47,7 +47,7 @@ public class login {
             if (newPassword == ""){
             System.out.println("Error. Please input a password.");
             }else {
-                System.out.println("Sign up successful!");
+                System.out.println("Signing Up...");
 
                 return database.createUser(newUserName, newPassword);
             }
@@ -70,7 +70,7 @@ public class login {
             if (password == ""){
                 System.out.println("Error. Please enter your password");
             }else {
-                System.out.print("Login successful!");
+                System.out.print("Logging in...");
                 return database.logIn(username, password);
             }
         }
