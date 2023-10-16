@@ -1,10 +1,10 @@
 package questiongame;
 import org.bson.Document;
 
-public class main {
+public class Main {
     public static void main(String[] args){
-        Document user = login.menu();
-
+        Document user = accountController.menu();
         System.out.println(user.toJson());
-    }
+    }  
+
 }

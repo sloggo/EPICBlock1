@@ -13,7 +13,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 //creating the main class
-public class login {
+public class accountController {
     
     public static Document menu(){
         Scanner scanner = new Scanner(System.in);
@@ -22,10 +22,10 @@ public class login {
         int menuchoice = scanner.nextInt();
         if (menuchoice == 0){
         //calling in the 'signup' method    
-            return signup();
+            return signup(); // will return user object
         }else if (menuchoice == 1){
         //calling in the 'login' method
-            return login();
+            return login(); // will return user object
         }else {
             System.out.println("Invalid input");
         }
@@ -49,7 +49,7 @@ public class login {
             }else {
                 System.out.println("Signing Up...");
 
-                return database.createUser(newUserName, newPassword);
+                return database.createUser(newUserName, newPassword); // creates new user
             }
         } 
 
@@ -71,7 +71,7 @@ public class login {
                 System.out.println("Error. Please enter your password");
             }else {
                 System.out.print("Logging in...");
-                return database.logIn(username, password);
+                return database.logIn(username, password); // logs into existing user
             }
         }
         return null;
