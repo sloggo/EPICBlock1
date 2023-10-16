@@ -31,7 +31,7 @@ public class login {
         }
 
     }
-    //method 'login' created for first time users
+    //method 'signup' created for first time users
     public static void signup(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a username: ");
@@ -68,6 +68,7 @@ public class login {
                 System.out.println("Error. Please enter your password");
             }else {
                 System.out.print("Login successful!");
+                String newUser = database.logIn(username, password);
             }
         }
     }
