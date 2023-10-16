@@ -11,10 +11,7 @@ import com.mongodb.client.MongoDatabase;
 
 //creating the main class
 public class login {
-    public static void main(String[] args){
-        //calling in the 'menu' method
-        menu();        
-    }
+    
     public static void menu(){
         Scanner scanner = new Scanner(System.in);
         //offering the user the choice to sign up or login

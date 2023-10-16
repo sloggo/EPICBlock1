@@ -46,14 +46,13 @@ public class database {
         // Combine the filters using the Filters.and method
         Bson filter = Filters.and(usernameFilter, passwordFilter);
         String userId = "";
-
-
-        Document doc = usersCollection.find(filter).first();
-
-        System.out.println(doc.toJson());
-        System.out.println("Logged in database");
-        userId = doc.get("_id").toString();
-
+        try{Document doc = usersCollection.find(filter).first();
+            System.out.println(doc.toJson());
+            System.out.println("Logged in database");
+            userId = doc.get("_id").toString();
+        } catch(Exception e){
+            System.out.println(e);
+        }
         return userId;
     }
 }
