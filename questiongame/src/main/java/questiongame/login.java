@@ -2,6 +2,9 @@ package questiongame;
 
 //importing java package to take user inputs
 import java.util.Scanner;
+
+import javax.print.Doc;
+
 import static com.mongodb.client.model.Filters.eq;
 import org.bson.Document;
 import com.mongodb.client.MongoClient;
@@ -12,24 +15,25 @@ import com.mongodb.client.MongoDatabase;
 //creating the main class
 public class login {
     
-    public static void menu(){
+    public static Document menu(){
         Scanner scanner = new Scanner(System.in);
         //offering the user the choice to sign up or login
         System.out.println("Enter 0 to sign up or enter 1 to Log in");
         int menuchoice = scanner.nextInt();
         if (menuchoice == 0){
         //calling in the 'signup' method    
-            signup();
+            return signup();
         }else if (menuchoice == 1){
         //calling in the 'login' method
-            login();
+            return login();
         }else {
             System.out.println("Invalid input");
         }
+        return null;
 
     }
     //method 'signup' created for first time users
-    public static void signup(){
+    public static Document signup(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a username: ");
         String newUserName = scanner.nextLine();
@@ -45,13 +49,15 @@ public class login {
             }else {
                 System.out.println("Sign up successful!");
 
-                String newUser = database.createUser(newUserName, newPassword);
+                return database.createUser(newUserName, newPassword);
             }
         } 
 
+        return null;
+
     }
     //method 'login' created for users that have already signed up 
-    public static void login(){
+    public static Document login(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your username");
         String username = scanner.nextLine();
@@ -65,8 +71,9 @@ public class login {
                 System.out.println("Error. Please enter your password");
             }else {
                 System.out.print("Login successful!");
-                String newUser = database.logIn(username, password);
+                return database.logIn(username, password);
             }
         }
+        return null;
     }
 }
