@@ -9,6 +9,7 @@ public class Question {
     char answer;
     String[] options;
 
+
     public Question(topic topic, difficulty difficulty, String question, char answer, String[] options){
         this.topic = topic;
         this.difficulty = difficulty;
@@ -18,6 +19,7 @@ public class Question {
     }
 
     Question[] Questions = {
+        new Question(topic.DISCMATHS, difficulty.NOVICE, "test", 'a', new String[]{"opta", "optb"}),
         new Question(topic.DISCMATHS, difficulty.NOVICE, "test", 'a', new String[]{"opta", "optb"})
     };
 
