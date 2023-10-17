@@ -1,10 +1,10 @@
-
+package questiongame;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class testMenu extends JFrame {
+public class GameMenu extends JFrame {
     private String[] gameModes = {"Novice", "Intermediate", "Expert"};
     private JComboBox<String> modeComboBox;
 
