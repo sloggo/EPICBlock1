@@ -24,7 +24,6 @@ public class GameMenu extends JFrame {
         add(startButton);
 
         startButton.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 String selectedMode = (String) modeComboBox.getSelectedItem();
                 JOptionPane.showMessageDialog(GameMenu.this, "Starting game in " + selectedMode + " mode.");
@@ -35,7 +34,6 @@ public class GameMenu extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-            @Override
             public void run() {
                 GameMenu menu = new GameMenu();
                 menu.setVisible(true);
