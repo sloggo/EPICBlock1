@@ -1,5 +1,7 @@
 package questiongame;
 
+import java.util.Arrays;
+
 public class Question {
     topic topic;
     difficulty difficulty;
@@ -53,5 +55,21 @@ public class Question {
         new Question(topic.DISCMATHS, difficulty.NOVICE, "-\tWhich of the below are NOT found in the original Von Neumann machine", 'a', new String[]{"opta", "optb"}),
         new Question(topic.DISCMATHS, difficulty.NOVICE, "Convert the hexadecimal number 2A3F to binary (ans = 1010001001111111)", 'a', new String[]{"opta", "optb"}),
     };
+
+    public Question[] getAllQuestions(){
+        return Questions;
+    }
+
+    public Question[] fetchSpecificQuestions(topic topic, difficulty difficulty){
+        Question[] sortedQuestions = {};
+        for(int i=0; i<Questions.length; i++){
+            if(Questions[i].topic == topic && Questions[i].difficulty == difficulty){
+                sortedQuestions = Arrays.copyOf(sortedQuestions, sortedQuestions.length + 1);
+                sortedQuestions[sortedQuestions.length - 1] = Questions[i];
+            } 
+        }
+        System.out.println(sortedQuestions.toString());
+        return sortedQuestions;
+    }
 }
 
