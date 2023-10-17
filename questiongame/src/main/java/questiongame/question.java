@@ -68,11 +68,7 @@ public class Question {
                 sortedQuestions[sortedQuestions.length - 1] = Questions[i];
             } 
         }
-<<<<<<< HEAD
         System.out.println(sortedQuestions.toString());
-=======
-        System.out.println(sortedQuestions.toString())
->>>>>>> 9b5b3ef75c0ab652803ded2c7691d5270bd344ff
         return sortedQuestions;
     }
 }
