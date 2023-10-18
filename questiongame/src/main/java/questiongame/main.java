@@ -1,6 +1,6 @@
 package questiongame;
 import java.util.Arrays;
-
+import java.util.Scanner;
 import org.bson.Document;
 
 public class Main {
@@ -21,7 +21,7 @@ public class Main {
                     "C says: \"I am the spy.\"\r\n" + //
                     "Who is the knight, who the knave, and who the spy?\r\n" + //
                     "", 'a', new String[]{"opta", "optb"}),
-            //need to insert matrix image in question on next line
+            //need to insert matrix image in question on next linellllllllllllllllllllllllllllllllllllllllllllllllllllllll
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "A system can take one of three states 1, 2, or 3. The system will change its status each second. The probability that a system will change from one state to another is given using the following adjacency matrix: ", 'a', new String[]{"opta", "optb"}),
             //Computer Science
             //Novice
@@ -35,7 +35,7 @@ public class Main {
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "-\tWhat is a predicate", 'a', new String[]{"opta", "optb"}),
             //Computer Organisation
             //Novice
-            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "-\tWhich of the below is a chip manufacturer", 'a', new String[]{"opta", "optb"}),
+            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.INTERMEDIATE, "-\tWhich of the below is a chip manufacturer", 'a', new String[]{"opta", "optb"}),
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "-\tWhat process is missing from the following cycle: Fetch, ____, Execute.", 'a', new String[]{"opta", "optb"}),
             //Intermediate
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "-\tWhich of the below best describes the Von Neumann bottleneck", 'a', new String[]{"opta", "optb"}),
@@ -47,23 +47,59 @@ public class Main {
 
         Document user = accountController.menu();
 
-        Question[] sortedQ = fetchSpecificQuestions(questiongame.topic.COMPORG, questiongame.difficulty.NOVICE, Questions);
-        for(Question q : sortedQ){
-            System.out.println(q.question);
-        }
+        difficultyMode(Questions);
     }  
 
 
     public static Question[] fetchSpecificQuestions(topic topic, difficulty difficulty, Question[] questions){
         Question[] sortedQuestions = {};
         for(int i=0; i<questions.length; i++){
-            if(questions[i].topic == topic && questions[i].difficulty == difficulty){
-                sortedQuestions = Arrays.copyOf(sortedQuestions, sortedQuestions.length + 1);
-                sortedQuestions[sortedQuestions.length - 1] = questions[i];
-            } 
+            if(topic != null && difficulty != null){ // if searching by both
+                if(questions[i].topic == topic && questions[i].difficulty == difficulty){
+                    sortedQuestions = Arrays.copyOf(sortedQuestions, sortedQuestions.length + 1);
+                    sortedQuestions[sortedQuestions.length - 1] = questions[i];
+                } 
+            } else if(topic == null){ // if searching by difficulty only
+                if(questions[i].difficulty == difficulty){
+                    sortedQuestions = Arrays.copyOf(sortedQuestions, sortedQuestions.length + 1);
+                    sortedQuestions[sortedQuestions.length - 1] = questions[i];
+                } 
+            } else if(difficulty == null){ // if searching by topic only
+                if(questions[i].topic == topic){
+                    sortedQuestions = Arrays.copyOf(sortedQuestions, sortedQuestions.length + 1);
+                    sortedQuestions[sortedQuestions.length - 1] = questions[i];
+                } 
+            }
+            
         }
         System.out.println(sortedQuestions.toString());
         return sortedQuestions;
+    }
+
+    public static void difficultyMode(Question[] questions){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to difficulty mode!");
+
+        System.out.println("1 - Novice | 2 - Intermediate | 3 - Expert");
+
+        int input = scanner.nextInt();
+        questiongame.difficulty difficultySelection = null;
+        switch(input){ // translate input to a difficulty selection
+            case(1):
+                difficultySelection = questiongame.difficulty.NOVICE; 
+                break;
+            case(2):
+                difficultySelection = questiongame.difficulty.INTERMEDIATE;
+                break;
+            case(3):
+                difficultySelection = questiongame.difficulty.EXPERT;
+        }
+
+        Question[] sortedQ = fetchSpecificQuestions(null, difficultySelection, questions);
+
+        for(Question q : sortedQ){ // loop through selected questions
+            System.out.println(q.question);
+        }
     }
 
 }
