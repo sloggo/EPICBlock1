@@ -93,7 +93,7 @@ public class modeController {
 
         System.out.println(randomQ.question);
 
-        while (){
+        while (i > 6){
 
         }
     }
