@@ -92,6 +92,10 @@ public class modeController {
         Question randomQ = questions[randomIndex];
 
         System.out.println(randomQ.question);
+
+        while (){
+
+        }
     }
 
 
