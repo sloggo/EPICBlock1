@@ -30,6 +30,16 @@ public class modeController {
             return sortedQuestions;
     }
 
+    public static void printQuestion(Question question){
+        System.out.println(question.question);
+
+            for(String ans: question.options){
+                int index = Arrays.asList(question.options).indexOf(ans);
+                System.out.print(index+ " "+ans+"\t");
+            }
+            System.out.println("");
+    }
+
     public static void difficultyMode(Question[] questions){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to difficulty mode!");
@@ -52,14 +62,7 @@ public class modeController {
         Question[] sortedQ = fetchSpecificQuestions(null, difficultySelection, questions);
 
         for(Question q : sortedQ){ // loop through selected questions
-
-            System.out.println(q.question);
-
-            for(String ans: q.options){
-                int index = Arrays.asList(q.options).indexOf(ans);
-                System.out.print(index+ " "+ans+"\t");
-            }
-            System.out.println("");
+            printQuestion(q);
         }
     }
 
