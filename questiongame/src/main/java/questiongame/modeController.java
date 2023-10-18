@@ -43,12 +43,16 @@ public class modeController {
     }
 
     public static void difficultyMode(Question[] questions){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to difficulty mode!");
 
         System.out.println("1 - Novice | 2 - Intermediate | 3 - Expert");
 
         int input = scanner.nextInt();
+        scanner.nextLine();
         questiongame.difficulty difficultySelection = null;
         switch(input){ // translate input to a difficulty selection
             case(1):
@@ -62,9 +66,20 @@ public class modeController {
         }
 
         Question[] sortedQ = fetchSpecificQuestions(null, difficultySelection, questions);
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
         for(Question q : sortedQ){ // loop through selected questions
             printQuestion(q);
+            String ansString = scanner.nextLine();
+            char ans = ansString.charAt(0);
+
+            if(ans == q.answer){
+                System.out.println("Correct!");
+            } else{
+                System.out.println("Incorrect!");
+                break;
+            }
         }
     }
 
