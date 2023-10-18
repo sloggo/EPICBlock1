@@ -85,16 +85,23 @@ public class modeController {
     public static void randomMode(Question[] questions){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Random Mode!");
-        int questionLength = questions.length;
-        Random random = new Random();
-        int randomIndex = random.nextInt(questionLength);
-        Question randomQ = questions[randomIndex];
-
-        System.out.println(randomQ.question);
 
         for(int i = 0; i<6; i++){
+             int questionLength = questions.length;
+            Random random = new Random();
+            int randomIndex = random.nextInt(questionLength);
+            Question randomQ = questions[randomIndex];
 
-        }
+            printQuestion(randomQ);
+                String ansString = scanner.nextLine();
+                char ans = ansString.charAt(0);
+
+                if(ans == randomQ.answer){
+                    System.out.println("Correct!");
+                } else{
+                    System.out.println("Incorrect!");
+                }
+            }
     }
 
     public static void suddenDeath(Question[] questions){
