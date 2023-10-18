@@ -93,9 +93,35 @@ public class modeController {
         System.out.println(randomQ.question);
 
         for(int i = 0; i<6; i++){
-            
+
         }
     }
 
+    public static void suddenDeath(Question[] questions){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to Sudden Death Mode!");
+
+        boolean alive = true;
+        int round = 1;
+
+        while(alive == true){
+            int questionLength = questions.length;
+            Random random = new Random();
+            int randomIndex = random.nextInt(questionLength);
+            Question randomQ = questions[randomIndex];
+
+            printQuestion(randomQ);
+            String ansString = scanner.nextLine();
+            char ans = ansString.charAt(0);
+
+            if(ans == randomQ.answer){
+                System.out.println("Correct!");
+                round++;
+            } else{
+                System.out.println("Incorrect! You lasted "+round+" rounds.");
+                alive = false;
+            }
+        }
+    }
 
 }
