@@ -2,8 +2,6 @@ package questiongame;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
-// importing random package
-import java.util.Random;
 
 public class modeController {
 
@@ -81,17 +79,6 @@ public class modeController {
                 break;
             }
         }
-    }
-
-    public static void randomMode(Question[] questions){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to Random Mode!");
-        int questionLength = questions.length;
-        Random random = new Random();
-        int randomIndex = random.nextInt(questionLength);
-        Question randomQ = questions[randomIndex];
-
-        System.out.println(randomQ.question);
     }
 
 
