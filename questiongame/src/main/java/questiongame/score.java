@@ -4,30 +4,25 @@ public class score{
     public static void main(String[] args){
 
     }
-    public static void modeFinder(int[] userScores){
-        // variables to store the mode and its frequency
-        int mode = 0;
-        int maxFrequency = 0;
+    public static void meanCalculator(int[] userScores){
+        int[] numbers = {5, 2, 9, 1, 5, 6};
 
-        //iterate through the userScores to find the mode
-        for(int i = 0; i < userScores.length; i++){
-            int count = 0;
-            for(int j = 0; j < userScores.length; j++){
-                if(userScores[i] == userScores[j]){
-                    count++;
-                }
-            }
-        if (count > maxFrequency){
-            maxFrequency = count;
-            mode = userScores[i];
+        // Calculate the sum of the numbers
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
         }
-        System.out.println("Mode of the array: " + mode);
+
+        // Calculate the mean
+        double mean = (double) sum / numbers.length;
+
+        // Print the mean
+        System.out.println("Mean of the array: " + mean);
     }
-}
     public static void median(){
 
 }
     public static void standardDeviation(){
-
+        
 }
 }
