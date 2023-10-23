@@ -19,7 +19,7 @@ public class score{
         // Print the mean
         System.out.println("Mean of the array: " + mean);
     }
-    public static void median(){
+    public static void medianCalculator(){
 
 }
     public static void standardDeviation(){
