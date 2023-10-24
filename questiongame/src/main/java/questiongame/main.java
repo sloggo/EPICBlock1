@@ -1,5 +1,6 @@
 package questiongame;
 import java.util.Arrays;
+//importing scanner package
 import java.util.Scanner;
 import org.bson.Document;
 
