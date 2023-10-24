@@ -21,8 +21,8 @@ public class Main {
                     "A says: \"C is a knave.\"\r\n" + //
                     "B says: \"A is a knight.\"\r\n" + //
                     "C says: \"I am the spy.\"\r\n" + //
-                    "Who is the knight, who the knave, and who the spy?\r\n" + //
-                    "", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+                    "Who is the knight, who is the knave, and who is the spy?\r\n" + //
+                    "", '4', new String[]{"A: Knight, B:Knave, C:Spy", "A:Spy, B:Knight, C:Knave", "A:Knave, B:Spy, C:Knight", "A:Knight, B:Spy, C:Knave"}),
             //need to insert matrix image in question on next line
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.EXPERT, "A system can take one of three states 1, 2, or 3. The system will change its status each second. The probability that a system will change from one state to another is given using the following adjacency matrix: ", 'a', new String[]{"opta", "optb", "optc", "optd"}),
             //Computer Science
