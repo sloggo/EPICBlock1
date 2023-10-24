@@ -44,6 +44,7 @@ public class modeController {
     public static void difficultyMode(Question[] questions){
         System.out.print("\033[H\033[2J");
         System.out.flush();
+        int correct = 0;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to difficulty mode!");
@@ -75,6 +76,7 @@ public class modeController {
 
             if(ans == q.answer){
                 System.out.println("Correct!");
+                correct++;
             } else{
                 System.out.println("Incorrect!");
                 break;
@@ -85,9 +87,10 @@ public class modeController {
     public static void randomMode(Question[] questions){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Random Mode!");
+        int correct = 0;
 
         for(int i = 0; i<6; i++){
-             int questionLength = questions.length;
+            int questionLength = questions.length;
             Random random = new Random();
             int randomIndex = random.nextInt(questionLength);
             Question randomQ = questions[randomIndex];
@@ -98,6 +101,7 @@ public class modeController {
 
                 if(ans == randomQ.answer){
                     System.out.println("Correct!");
+                    correct++;
                 } else{
                     System.out.println("Incorrect!");
                 }
