@@ -47,8 +47,10 @@ public class Main {
         };
         
         Document user = accountController.menu();
-
-        modeController.suddenDeath(Questions);
+        int[] array = {12,23,54,654,765,34,34,546,45,2,34,46,543,432,434};
+        score.meanCalculator(array);
+        score.medianCalculator(array);
+        score.standardDeviation(array);
     }  
 
 
