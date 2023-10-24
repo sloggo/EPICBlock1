@@ -11,7 +11,7 @@ public class Main {
         Question[] Questions = {
             //Discrete Maths questions
             //Novice
-            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Define a set A = {1,2,3}. List all the subsets of set A.", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Define a set A = {1,2,3}. List all the subsets of set A.", 'a', new String[]{"blue", "optb", "optc", "optd"}),
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Determine the truth value of the statement: (P ^ Q) v (¬P ^ Q) when P = True and Q =False", 'a', new String[]{"opta", "optb", "optc", "optd"}),
             //Intermediate
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.INTERMEDIATE, "- Find the truth value of the statement: (P ^ Q) v (¬P ^ R) when P = True, Q = False, and R = True", 'a', new String[]{"opta", "optb", "optc", "optd"}),
