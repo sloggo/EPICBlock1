@@ -14,8 +14,8 @@ public class Main {
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Let A = {1,2,3} and B = {3,4,5}. Find A u B", '4', new String[]{"{1,2,3,4,5}", "{1,2}", "{4,5}", "{3}"}),
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Determine the truth value of the statement: (P ^ Q) v (¬P ^ Q) when P = True and Q =False", '2', new String[]{"True", "False",}),
             //Intermediate
-            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.INTERMEDIATE, "- Find the truth value of the statement: (P ^ Q) v (¬P ^ R) when P = True, Q = False, and R = True", 'a', new String[]{"opta", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.INTERMEDIATE, "Prove that if a is an even integer and b is an odd integer, then ab is even.", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.INTERMEDIATE, "- Find the truth value of the statement: (P ^ Q) v (¬P ^ R) when P = True, Q = False, and R = True", '2', new String[]{"True", "False"}),
+            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.INTERMEDIATE, "Find the walks of length two from a to a in the following matrix :\n a b c \n ---\n a | 1 0 1 \n b | 0 1 0 \n c | 1 0 1", '1', new String[]{"2", "0", "1", "4"}),
             //Expert
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.EXPERT, "-\tOn the fabled Island of Knights and Knaves, we meet three people, A, B, and C, one of whom is a knight, one a knave, and one a spy. The knight always tells the truth, the knave always lies, and the spy can either lie or tell the truth.\r\n" + //
                     "A says: \"C is a knave.\"\r\n" + //
