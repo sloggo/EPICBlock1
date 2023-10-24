@@ -4,7 +4,7 @@ public class score{
     public static void main(String[] args){
 
     }
-    public static void meanCalculator(int[] userScores){
+    public static double meanCalculator(int[] userScores){
 
         // Calculating the sum of the numbers
         int sum = 0;
@@ -17,6 +17,7 @@ public class score{
 
         // Printing the mean
         System.out.println("Mean of the array: " + mean);
+        return mean;
     }
     public static void medianCalculator(int[] userScores){
         Arrays.sort(userScores);
@@ -33,7 +34,19 @@ public class score{
         // Print the median
         System.out.println("Median of the array: " + median);
 }
-    public static void standardDeviation(){
-        
+    public static void standardDeviation(int[] userScores){
+        //Calculating the variance
+        double variance = 0;
+        double mean = meanCalculator(userScores);
+        for (int number : userScores) {
+            variance += Math.pow(number - mean, 2);
+        }
+        variance /= userScores.length;
+
+        // Step 3: Calculate the standard deviation (square root of the variance)
+        double standardDeviation = Math.sqrt(variance);
+
+        // Print the standard deviation
+        System.out.println("Standard Deviation of the array: " + standardDeviation);
 }
 }
