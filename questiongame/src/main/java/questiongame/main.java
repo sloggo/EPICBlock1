@@ -11,8 +11,8 @@ public class Main {
         Question[] Questions = {
             //Discrete Maths questions
             //Novice
-            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Define a set A = {1,2,3}. List all the subsets of set A.", 'a', new String[]{"blue", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Determine the truth value of the statement: (P ^ Q) v (¬P ^ Q) when P = True and Q =False", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Let A = {1,2,3} and B = {3,4,5}. Find A u B", '4', new String[]{"{1,2,3,4,5}", "{1,2}", "{4,5}", "{3}"}),
+            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Determine the truth value of the statement: (P ^ Q) v (¬P ^ Q) when P = True and Q =False", '2', new String[]{"True", "False",}),
             //Intermediate
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.INTERMEDIATE, "- Find the truth value of the statement: (P ^ Q) v (¬P ^ R) when P = True, Q = False, and R = True", 'a', new String[]{"opta", "optb", "optc", "optd"}),
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.INTERMEDIATE, "Prove that if a is an even integer and b is an odd integer, then ab is even.", 'a', new String[]{"opta", "optb", "optc", "optd"}),
