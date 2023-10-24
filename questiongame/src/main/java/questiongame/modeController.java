@@ -2,6 +2,7 @@ package questiongame;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Random;
 
 public class modeController {
 
@@ -30,13 +31,27 @@ public class modeController {
             return sortedQuestions;
     }
 
+    public static void printQuestion(Question question){
+        System.out.println(question.question);
+
+            for(String ans: question.options){
+                int index = Arrays.asList(question.options).indexOf(ans);
+                System.out.print(index+ " "+ans+"\t");
+            }
+            System.out.println("");
+    }
+
     public static void difficultyMode(Question[] questions){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to difficulty mode!");
 
         System.out.println("1 - Novice | 2 - Intermediate | 3 - Expert");
 
         int input = scanner.nextInt();
+        scanner.nextLine();
         questiongame.difficulty difficultySelection = null;
         switch(input){ // translate input to a difficulty selection
             case(1):
@@ -50,18 +65,70 @@ public class modeController {
         }
 
         Question[] sortedQ = fetchSpecificQuestions(null, difficultySelection, questions);
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
         for(Question q : sortedQ){ // loop through selected questions
+            printQuestion(q);
+            String ansString = scanner.nextLine();
+            char ans = ansString.charAt(0);
 
-            System.out.println(q.question);
-
-            for(String ans: q.options){
-                int index = Arrays.asList(q.options).indexOf(ans);
-                System.out.print(index+ " "+ans+"\t");
+            if(ans == q.answer){
+                System.out.println("Correct!");
+            } else{
+                System.out.println("Incorrect!");
+                break;
             }
-            System.out.println("");
         }
     }
 
+    public static void randomMode(Question[] questions){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to Random Mode!");
+
+        for(int i = 0; i<6; i++){
+             int questionLength = questions.length;
+            Random random = new Random();
+            int randomIndex = random.nextInt(questionLength);
+            Question randomQ = questions[randomIndex];
+
+            printQuestion(randomQ);
+                String ansString = scanner.nextLine();
+                char ans = ansString.charAt(0);
+
+                if(ans == randomQ.answer){
+                    System.out.println("Correct!");
+                } else{
+                    System.out.println("Incorrect!");
+                }
+            }
+    }
+
+    public static void suddenDeath(Question[] questions){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to Sudden Death Mode!");
+
+        boolean alive = true;
+        int round = 1;
+
+        while(alive == true){
+            int questionLength = questions.length;
+            Random random = new Random();
+            int randomIndex = random.nextInt(questionLength);
+            Question randomQ = questions[randomIndex];
+
+            printQuestion(randomQ);
+            String ansString = scanner.nextLine();
+            char ans = ansString.charAt(0);
+
+            if(ans == randomQ.answer){
+                System.out.println("Correct!");
+                round++;
+            } else{
+                System.out.println("Incorrect! You lasted "+round+" rounds.");
+                alive = false;
+            }
+        }
+    }
 
 }

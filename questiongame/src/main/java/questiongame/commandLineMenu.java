@@ -11,11 +11,11 @@ public class commandLineMenu {
         System.out.println("Choose a game mode: Enter 1 for Random Quiz , 2 for Difficulty Based Quiz, or 3 for Timed Quiz");
         int gameModeChoice = scanner.nextInt();
         if (gameModeChoice == 1){
-            return null;
+            //return randomQuiz();
         }else if (gameModeChoice == 2){
-            return null;
+            //return difficultyQuiz();
         }else if (gameModeChoice == 3){
-            return null;
+            //xreturn timedQuiz();
         } else {
             System.out.println("Invalid input");
         }
