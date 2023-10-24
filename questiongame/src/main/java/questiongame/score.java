@@ -5,23 +5,21 @@ public class score{
 
     }
     public static void meanCalculator(int[] userScores){
-        int[] numbers = {5, 2, 9, 1, 5, 6};
 
         // Calculating the sum of the numbers
         int sum = 0;
-        for (int number : numbers) {
+        for (int number : userScores) {
             sum += number;
         }
 
         // Calculating the mean
-        double mean = (double) sum / numbers.length;
+        double mean = (double) sum / userScores.length;
 
         // Printing the mean
         System.out.println("Mean of the array: " + mean);
     }
     public static void medianCalculator(int[] userScores){
-        int[] integers = {5, 2, 9, 1, 5, 6};
-        Arrays.sort(integers);
+        Arrays.sort(userScores);
 
         double median;
         int length = userScores.length;
