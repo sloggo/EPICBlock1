@@ -48,7 +48,7 @@ public class Main {
         
         Document user = accountController.menu();
 
-        modeController.suddenDeath(Questions);
+        modeController.randomMode(Questions);
     }  
 
 

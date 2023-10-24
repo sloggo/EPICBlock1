@@ -83,6 +83,8 @@ public class modeController {
     }
 
     public static void randomMode(Question[] questions){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Random Mode!");
 
@@ -101,6 +103,8 @@ public class modeController {
                 } else{
                     System.out.println("Incorrect!");
                 }
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
             }
     }
 
