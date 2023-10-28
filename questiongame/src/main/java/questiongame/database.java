@@ -44,6 +44,10 @@ public class database {
         } catch (Exception e) {
             System.out.println(e);
             return null;
+        } catch(Exception e){
+            usersCollection.insertOne( newUser );
+            System.out.println("Signed up!");
+            return newUser;
         }
     }
 
@@ -74,6 +78,15 @@ public class database {
             return null;
         }
         
+    }
+
+    public static MongoCollection<Document> getAllUsers(){
+        System.out.println("Getting all users...");
+        database dBController = new database();
+        MongoDatabase mongoDB = dBController.mongoClient.getDatabase("questionGame");
+        MongoCollection<Document> usersCollection = mongoDB.getCollection("users");
+
+        return usersCollection;
     }
 
     public static void updateUser(User user){
