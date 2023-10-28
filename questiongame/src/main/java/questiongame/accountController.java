@@ -15,36 +15,37 @@ import com.mongodb.client.MongoDatabase;
 //creating the main class
 public class accountController {
     
-    public static Document menu(){
+    public static User menu(){
         Scanner scanner = new Scanner(System.in);
         //offering the user the choice to sign up or login
         System.out.println("Enter 0 to sign up or enter 1 to Log in");
         int menuchoice = scanner.nextInt();
+        User user = null;
         if (menuchoice == 0){
         //calling in the 'signup' method    
-            return signup(); // will return user object
+            user = signup(); // will return user object
         }else if (menuchoice == 1){
         //calling in the 'login' method
-            return login(); // will return user object
+            user = login(); // will return user object
         }else {
             System.out.println("Invalid input");
         }
-        return null;
+        return user;
 
     }
     //method 'signup' created for first time users
-    public static Document signup(){
+    public static User signup(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a username: ");
         String newUserName = scanner.nextLine();
         //printing an error if the user does not input anything for username or password
-        if (newUserName == ""){
+        if (newUserName.equals("")){
             System.out.println("Error. Please input a username.");
         }else {
             System.out.println("Choose a password: ");
             String newPassword = scanner.nextLine();
 
-            if (newPassword == ""){
+            if (newPassword.equals("")){
             System.out.println("Error. Please input a password.");
             }else {
                 System.out.println("Signing Up...");
@@ -57,7 +58,7 @@ public class accountController {
 
     }
     //method 'login' created for users that have already signed up 
-    public static Document login(){
+    public static User login(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your username");
         String username = scanner.nextLine();
