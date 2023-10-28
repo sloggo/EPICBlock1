@@ -46,11 +46,9 @@ public class Main {
             new Question(questiongame.topic.COMPORG, questiongame.difficulty.EXPERT, "Convert the hexadecimal number 2A3F to binary (ans = 1010001001111111)", 'a', new String[]{"opta", "optb"}),
         };
         
-        Document user = accountController.menu();
-        int[] array = {12,23,54,654,765,34,34,546,45,2,34,46,543,432,434};
-        score.meanCalculator(array);
-        score.medianCalculator(array);
-        score.standardDeviation(array);
+        User user = accountController.menu();
+        System.out.println(user.username);
+        commandLineMenu.gameModeMenu(Questions);
     }  
 
 
