@@ -85,6 +85,8 @@ public class modeController {
     }
 
     public static void randomMode(Question[] questions){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Random Mode!");
         int correct = 0;
@@ -106,9 +108,13 @@ public class modeController {
                     System.out.println("Incorrect!");
                 }
             }
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
     }
 
     public static void suddenDeath(Question[] questions){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Sudden Death Mode!");
 
@@ -128,6 +134,8 @@ public class modeController {
             if(ans == randomQ.answer){
                 System.out.println("Correct!");
                 round++;
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
             } else{
                 System.out.println("Incorrect! You lasted "+round+" rounds.");
                 alive = false;
