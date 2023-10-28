@@ -49,7 +49,7 @@ public class Main {
         
         User user = accountController.menu();
         System.out.println(user.username);
-        commandLineMenu.gameModeMenu(Questions);
+        commandLineMenu.gameModeMenu(Questions, user);
     }  
 
 

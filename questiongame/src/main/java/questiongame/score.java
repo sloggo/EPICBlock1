@@ -1,9 +1,7 @@
 package questiongame;
 import java.util.Arrays;
 public class score{
-    public static void main(String[] args){
 
-    }
     public static double meanCalculator(int[] userScores){
 
         // Calculating the sum of the numbers
@@ -48,5 +46,10 @@ public class score{
 
         // Print the standard deviation
         System.out.println("Standard Deviation of the array: " + standardDeviation);
-}
+    }
+
+    public static void updateScore(User user, int increase){
+        user.score += increase;
+        database.updateUser(user);
+    }
 }

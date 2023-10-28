@@ -41,7 +41,7 @@ public class modeController {
             System.out.println("");
     }
 
-    public static void difficultyMode(Question[] questions){
+    public static void difficultyMode(Question[] questions, User user){
         System.out.print("\033[H\033[2J");
         System.out.flush();
         int correct = 0;
@@ -82,9 +82,11 @@ public class modeController {
                 break;
             }
         }
+
+        finishedQuiz(user, correct);
     }
 
-    public static void randomMode(Question[] questions){
+    public static void randomMode(Question[] questions, User user){
         System.out.print("\033[H\033[2J");
         System.out.flush();
         Scanner scanner = new Scanner(System.in);
@@ -108,11 +110,13 @@ public class modeController {
                     System.out.println("Incorrect!");
                 }
             }
+
+            finishedQuiz(user, correct);
             System.out.print("\033[H\033[2J");
             System.out.flush();
     }
 
-    public static void suddenDeath(Question[] questions){
+    public static void suddenDeath(Question[] questions, User user){
         System.out.print("\033[H\033[2J");
         System.out.flush();
         Scanner scanner = new Scanner(System.in);
@@ -141,6 +145,12 @@ public class modeController {
                 alive = false;
             }
         }
+        finishedQuiz(user, round);
+    }
+
+    public static void finishedQuiz(User user, int increaseScore){
+        score.updateScore(user, increaseScore);
+        
     }
 
 }

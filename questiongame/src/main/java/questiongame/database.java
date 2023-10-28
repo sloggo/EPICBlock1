@@ -10,6 +10,7 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.ReplaceOptions;
 
 public class database {
     String uri = "mongodb+srv://sloggo:sloggo@questiongame.ivpo6ff.mongodb.net/?retryWrites=true&w=majority";
@@ -75,14 +76,20 @@ public class database {
         
     }
 
-    public static void updateUser(Document user, String username){
+    public static void updateUser(User user){
         database dBController = new database();
         MongoDatabase mongoDB = dBController.mongoClient.getDatabase("questionGame");
         MongoCollection<Document> usersCollection = mongoDB.getCollection("users");
 
-        // Create separate filters for "username" and "password"
-        Bson usernameFilter = Filters.eq("username", username);
+        Bson usernameFilter = Filters.eq("username", user.username);
 
-        usersCollection.replaceOne(usernameFilter, user, null);
+        Document newUser = new Document() // convert updated user back into a document to insert into mongodb again
+                        .append("userId", new ObjectId(user.userId))
+                        .append("username", user.username)
+                        .append("password", user.password)
+                        .append("score", user.score);
+
+        ReplaceOptions opts = new ReplaceOptions().upsert(true);
+        usersCollection.replaceOne(usernameFilter, newUser, opts);
     }
 }
