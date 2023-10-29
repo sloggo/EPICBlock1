@@ -37,8 +37,8 @@ public class Main {
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhat is a predicate", 'a', new String[]{"opta", "optb", "optc", "optd"}),
             //Computer Organisation
             //Novice
-            new Question(questiongame.topic.COMPORG, questiongame.difficulty.NOVICE, "-\tWhich of the below is a chip manufacturer", 'a', new String[]{"opta", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.COMPORG, questiongame.difficulty.NOVICE, "-\tWhat process is missing from the following cycle: Fetch, ____, Execute.", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.COMPORG, questiongame.difficulty.NOVICE, "-\tOut of registers and the cache in a computer, which of the two is located inside the CPU.", '2', new String[]{"Cache", "Registers", "Both", "Neither"}),
+            new Question(questiongame.topic.COMPORG, questiongame.difficulty.NOVICE, "-\tWhich of the below best describes the Von Neumann bottleneck", 'a', new String[]{"opta", "optb", "optc", "optd"}),
             //Intermediate
             new Question(questiongame.topic.COMPORG, questiongame.difficulty.INTERMEDIATE, "-\tWhich of the below best describes the Von Neumann bottleneck", 'a', new String[]{"opta", "optb", "optc", "optd"}),
             new Question(questiongame.topic.COMPORG, questiongame.difficulty.INTERMEDIATE, "-\tWhat is Moores law for CPU chips.", 'a', new String[]{"opta", "optb", "optc", "optd"}),
