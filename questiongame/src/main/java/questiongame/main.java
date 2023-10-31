@@ -34,7 +34,7 @@ public class Main {
             for?", '4', new String[]{"Bernhard Description Diagram", "Braunt Design Diagram", "Backus Definition Diagram", "Boolean Decision Diagram"}),
             //Intermediate
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\tWhat are the suprema and infima of this set? A = {1,2,3,4}", 'a', new String[]{"opta", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\t Question", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\tWhich of the following is an example of commutativity ", '1', new String[]{"A n B = B n A", "A u B = A n B", "A u(A n B) = A n B", "A'B = A u B"}),
             //Expert
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tQuestion", 'a', new String[]{"opta", "optb", "optc", "optd"}),
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhich of the following is a predicate", 'a', new String[]{"opta", "optb", "optc", "optd"}),
