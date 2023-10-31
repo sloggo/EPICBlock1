@@ -28,23 +28,23 @@ public class Main {
             //Computer Science
             //Novice
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.NOVICE, "-\tExplain what is meant by a Backus Naur Form", 'a', new String[]{"opta", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.NOVICE, "-\tWhat does the term BDD stand for?", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.NOVICE, "-\tWhat does the term BDD stand for?", '4', new String[]{"Bernhard Description Diagram", "Braunt Design Diagram", "Backus Definition Diagram", "Boolean Decision Diagram"}),
             //Intermediate
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\tWhat are the suprema and infima of this set? A = {1,2,3,4}", 'a', new String[]{"opta", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\tSelect the Boolean connective below (AND, OR, NOT)", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\tQuestion, 'a', new String[]{"opta", "optb", "optc", "optd"}),
             //Expert
-            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhich duo created ADD-Lib (Frederick Gossen + Tiziana Margaria)", 'a', new String[]{"opta", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhat is a predicate", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tQuestion", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhich of the following is a predicate", 'a', new String[]{"opta", "optb", "optc", "optd"}),
             //Computer Organisation
             //Novice
-            new Question(questiongame.topic.COMPORG, questiongame.difficulty.NOVICE, "-\tWhich of the below is a chip manufacturer", 'a', new String[]{"opta", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.COMPORG, questiongame.difficulty.NOVICE, "-\tWhat process is missing from the following cycle: Fetch, ____, Execute.", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.COMPORG, questiongame.difficulty.NOVICE, "-\tOut of registers and the cache in a computer, which of the two is located inside the CPU.", '2', new String[]{"Cache", "Registers", "Both", "Neither"}),
+            new Question(questiongame.topic.COMPORG, questiongame.difficulty.NOVICE, "-\tWhich of the below best describes the Von Neumann bottleneck", 'a', new String[]{"opta", "optb", "optc", "optd"}),
             //Intermediate
-            new Question(questiongame.topic.COMPORG, questiongame.difficulty.INTERMEDIATE, "-\tWhich of the below best describes the Von Neumann bottleneck", 'a', new String[]{"opta", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.COMPORG, questiongame.difficulty.INTERMEDIATE, "-\tWhat is Moores law for CPU chips.", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.COMPORG, questiongame.difficulty.INTERMEDIATE, "-\tConvert the binary number 1101 to decimal", '3', new String[]{"33", "3", "13", "53"}),
+            new Question(questiongame.topic.COMPORG, questiongame.difficulty.INTERMEDIATE, "-\tWhich of the below are NOT found in the original Von Neumann machine ", '1', new String[]{"Audio Processor", "Memory", "Control Unit", "Arithmetic logic unit"}),
             //Expert
-            new Question(questiongame.topic.COMPORG, questiongame.difficulty.EXPERT, "-\tWhich of the below are NOT found in the original Von Neumann machine", 'a', new String[]{"opta", "optb", "optc", "optd"}),
-            new Question(questiongame.topic.COMPORG, questiongame.difficulty.EXPERT, "Convert the hexadecimal number 2A3F to binary (ans = 1010001001111111)", 'a', new String[]{"opta", "optb", "optc", "optd"}),
+            new Question(questiongame.topic.COMPORG, questiongame.difficulty.EXPERT, "-\tWhat is Moores law for CPU chips", '2', new String[]{"the number of transistors on a microchip doubles approximately every year", "The number of transistors on a microchip doubles approximately every two years", "The number of registers in a CPU doubles approximately every two years", "The RAM doubles in a computer approximately every two years"}),
+            new Question(questiongame.topic.COMPORG, questiongame.difficulty.EXPERT, "Convert the hexadecimal number 2A3F to binary", '4', new String[]{"1010101010101010", "0001011101000110", "1000111011101101", "1010001001111111"}),
         };
         
         User user = accountController.menu();
