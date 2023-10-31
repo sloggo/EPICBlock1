@@ -110,10 +110,9 @@ public class modeController {
                     System.out.println("Incorrect!");
                 }
             }
-
-            finishedQuiz(user, correct);
             System.out.print("\033[H\033[2J");
             System.out.flush();
+            finishedQuiz(user, correct);
     }
 
     public static void suddenDeath(Question[] questions, User user){
@@ -150,7 +149,7 @@ public class modeController {
 
     public static void finishedQuiz(User user, int increaseScore){
         score.updateScore(user, increaseScore);
-        
+        leaderboard.generateLeaderboard();
     }
 
 }
