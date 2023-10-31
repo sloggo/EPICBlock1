@@ -1,5 +1,9 @@
 package questiongame;
 import static com.mongodb.client.model.Filters.eq;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
@@ -11,6 +15,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.ReplaceOptions;
+import com.mongodb.client.model.Sorts;
 
 public class database {
     String uri = "mongodb+srv://sloggo:sloggo@questiongame.ivpo6ff.mongodb.net/?retryWrites=true&w=majority";
@@ -44,10 +49,6 @@ public class database {
         } catch (Exception e) {
             System.out.println(e);
             return null;
-        } catch(Exception e){
-            usersCollection.insertOne( newUser );
-            System.out.println("Signed up!");
-            return newUser;
         }
     }
 
@@ -80,13 +81,16 @@ public class database {
         
     }
 
-    public static MongoCollection<Document> getAllUsers(){
+    public static List<Document> getAllUsers() {
         System.out.println("Getting all users...");
         database dBController = new database();
         MongoDatabase mongoDB = dBController.mongoClient.getDatabase("questionGame");
         MongoCollection<Document> usersCollection = mongoDB.getCollection("users");
 
-        return usersCollection;
+        List<Document> results = new ArrayList<>();
+        usersCollection.find().sort(Sorts.descending("score")).into(results); // Use Sorts.descending to find highest
+
+        return results;
     }
 
     public static void updateUser(User user){
