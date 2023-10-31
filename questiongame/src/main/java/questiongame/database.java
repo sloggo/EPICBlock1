@@ -44,10 +44,6 @@ public class database {
         } catch (Exception e) {
             System.out.println(e);
             return null;
-        } catch(Exception e){
-            usersCollection.insertOne( newUser );
-            System.out.println("Signed up!");
-            return newUser;
         }
     }
 
