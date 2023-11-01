@@ -9,7 +9,7 @@ public class start {
     
     public static void main(String[] args){
         Question[] Questions = {
-            //Discrete Maths questions
+            //Discrete Maths questions 74
             //Novice
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Let A = {1,2,3} and B = {3,4,5}. Find A u B", "4", new String[]{"{1,2,3,4,5}", "{1,2}", "{4,5}", "{3}"}),
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Determine the truth value of the statement: (P ^ Q) v (¬P ^ Q) when P = True and Q =False", "2", new String[]{"True", "False",}),
