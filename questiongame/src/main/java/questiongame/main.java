@@ -34,7 +34,7 @@ public class main {
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\tWhat is the supremum of this set? A = {1,2,3,4}", "1", new String[]{"4", "2", "3", "1"}),
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\t Which of the following is not a predicate", "1", new String[]{"Paris is the capital of France.", "P(x) = {x is a positive integer.}", "S(x, y) = {x is greater than the square of }", "R(x) = {x is a square number}"}),
             //Expert
-            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhat does ‘reductio ad absurdum’ mean", "2", new String[]{"Proof by induction", "Proof by contradiction", "Direct Proof", "Proof by cases"}),
+            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhat does \'reductio ad absurdum\'' mean", "2", new String[]{"Proof by induction", "Proof by contradiction", "Direct Proof", "Proof by cases"}),
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhich of the following is an example of commutativity ", "3", new String[]{"A u (A n B) = A n B", "A u B = A'(A n B)", "A n B = B n A", "B u B = A n B"}),
             //Computer Organisation
             //Novice
