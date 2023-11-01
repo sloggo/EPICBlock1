@@ -5,7 +5,7 @@ import java.util.Scanner;
 import org.bson.Document;
 
 
-public class Main {
+public class start {
     
     public static void main(String[] args){
         Question[] Questions = {
