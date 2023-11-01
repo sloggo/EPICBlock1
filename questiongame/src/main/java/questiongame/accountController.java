@@ -30,6 +30,7 @@ public class accountController {
         }else {
             System.out.println("Invalid input");
         }
+        scanner.close();
         return user;
 
     }
@@ -48,9 +49,9 @@ public class accountController {
         }else { 
             System.out.println("Error. Please enter your username and password");
         }
-
+        scanner.close();
         return null;
-
+        
     }
     //method 'login' created for users that have already signed up 
     public static User login(){
