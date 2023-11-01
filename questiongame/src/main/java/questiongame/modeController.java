@@ -117,7 +117,7 @@ public class modeController {
             System.out.flush();
             finishedQuiz(user, correct);
     }
-
+//sudden death method
     public static void suddenDeath(Question[] questions, User user){
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -146,7 +146,7 @@ public class modeController {
         }
         finishedQuiz(user, round);
     }
-
+//when quiz finished, leaderboard is generated
     public static void finishedQuiz(User user, int increaseScore){
         score.updateScore(user, increaseScore);
         leaderboard.generateLeaderboard(increaseScore);
