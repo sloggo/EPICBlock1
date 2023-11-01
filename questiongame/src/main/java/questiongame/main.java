@@ -5,13 +5,14 @@ import java.util.Scanner;
 import org.bson.Document;
 
 
-public class Main {
+public class main {
     
     public static void main(String[] args){
+
         Question[] Questions = {
             //Discrete Maths questions 74
             //Novice
-            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Let A = {1,2,3} and B = {3,4,5}. Find A u B", "4", new String[]{"{1,2,3,4,5}", "{1,2}", "{4,5}", "{3}"}),
+            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Let A = {1,2,3} and B = {3,4,5}. Find A u B", "1", new String[]{"{1,2,3,4,5}", "{1,2}", "{4,5}", "{3}"}),
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.NOVICE, "Determine the truth value of the statement: (P ^ Q) v (¬P ^ Q) when P = True and Q =False", "2", new String[]{"True", "False",}),
             //Intermediate
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.INTERMEDIATE, "- Find the truth value of the statement: (P ^ Q) v (¬P ^ R) when P = True, Q = False, and R = True", "2", new String[]{"True", "False"}),
@@ -50,10 +51,22 @@ public class Main {
             "The number of transistors on a microchip doubles approximately every two years", "The number of registers in a CPU doubles approximately every two years", "The RAM doubles in a computer approximately every two years"}),
             new Question(questiongame.topic.COMPORG, questiongame.difficulty.EXPERT, "Convert the hexadecimal number 2A3F to binary", "4", new String[]{"1010101010101010", "0001011101000110", "1000111011101101", "1010001001111111"}),
         };
-        
-        User user = accountController.menu();
-        System.out.println(user.username);
-        commandLineMenu.gameModeMenu(Questions, user);
+
+        boolean loggedIn = false;
+
+        while(!loggedIn){
+            System.out.println("\n\nWELCOME TO QUIZWIZZ!");
+            System.out.println("Copyright 2023 - KISS Solutions Plc");
+
+            User user = accountController.menu();
+            if(user != null){
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+                System.out.println("Welcome "+user.username+"!");
+                loggedIn = true;
+                commandLineMenu.gameModeMenu(Questions, user);
+            }
+        }
     }  
 
 

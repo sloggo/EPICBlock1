@@ -44,7 +44,7 @@ public class accountController {
         //printing an error if the user does not input anything for username or password
         if (newUserName != "" && newPassword != ""){
             System.out.print("Logging in...");
-            return database.logIn(newUserName, newPassword); // logs into existing user
+            return database.createUser(newUserName, newPassword); // logs into existing user
         }else { 
             System.out.println("Error. Please enter your username and password");
         }

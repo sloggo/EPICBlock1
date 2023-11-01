@@ -10,13 +10,13 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 
 public class leaderboard {
-    public static void generateLeaderboard(){
+    public static void generateLeaderboard(int userScore){
         List<Document> userArray = database.getAllUsers();
 
         // Convert the list to an array
-        System.out.println(userArray);
-
-        System.out.println("\tLEADERBOARD\n");
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        System.out.println("\n\tLEADERBOARD - You got "+userScore+" score!\n");
         System.out.println("Username \t\t Score");
         System.out.println("-----------------------------------");
 
@@ -28,13 +28,13 @@ public class leaderboard {
         }
 
         double mean = score.meanCalculator(scores);
-        System.out.println("Mean score: "+mean);
+        System.out.println("\nMean score: "+mean);
 
         double median = score.medianCalculator(scores);
         System.out.println("Median score: "+median);
 
         double sd = score.standardDeviation(scores);
-        System.out.println("Standard Deviation score: "+sd);
+        System.out.println("Standard Deviation score: "+sd+"\n");
     }
     public static void getStatistics(){
 
