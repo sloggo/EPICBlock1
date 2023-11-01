@@ -8,7 +8,7 @@ import org.bson.Document;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-
+//method that manages leaderboard 
 public class leaderboard {
     public static void generateLeaderboard(int userScore){
         List<Document> userArray = database.getAllUsers();

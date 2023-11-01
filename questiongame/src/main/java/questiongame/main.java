@@ -1,10 +1,11 @@
 package questiongame;
+//importing java extensions
 import java.util.Arrays;
 //importing scanner package
 import java.util.Scanner;
 import org.bson.Document;
 
-
+//creating public class
 public class main {
     
     public static void main(String[] args){
@@ -48,7 +49,7 @@ public class main {
             "The number of transistors on a microchip doubles approximately every two years", "The number of registers in a CPU doubles approximately every two years", "The RAM doubles in a computer approximately every two years"}),
             new Question(questiongame.topic.COMPORG, questiongame.difficulty.EXPERT, "Convert the hexadecimal number 2A3F to binary", "4", new String[]{"1010101010101010", "0001011101000110", "1000111011101101", "1010001001111111"}),
         };
-
+        //login/signup prompt loop
         boolean loggedIn = false;
 
         while(!loggedIn){
@@ -59,6 +60,7 @@ public class main {
             if(user != null){
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
+                //clearing console
                 System.out.println("Welcome "+user.username+"!");
                 loggedIn = true;
                 commandLineMenu.gameModeMenu(Questions, user);

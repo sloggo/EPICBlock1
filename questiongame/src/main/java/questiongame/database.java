@@ -7,7 +7,7 @@ import java.util.List;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
-
+//importing mongo extensions
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -18,9 +18,11 @@ import com.mongodb.client.model.ReplaceOptions;
 import com.mongodb.client.model.Sorts;
 
 public class database {
+    // token used to access database
     String uri = "mongodb+srv://sloggo:sloggo@questiongame.ivpo6ff.mongodb.net/?retryWrites=true&w=majority";
     MongoClient mongoClient = MongoClients.create(uri);
-
+//creating instance of mongoDB database
+//funtion that creates user when user signs up
     public static User createUser(String usernameToCreate, String passwordToCreate){
         database dBController = new database();
         MongoDatabase mongoDB = dBController.mongoClient.getDatabase("questionGame");
@@ -29,6 +31,9 @@ public class database {
         Bson usernameFilter = Filters.eq("username", usernameToCreate);
 
         try {
+            //checking to see if user already exists
+            //if user already exists, prints error
+            //if user does not exist,creates new user and pushes to the database
             Document existingUser = usersCollection.find(usernameFilter).first();
             if (existingUser != null) {
                 System.out.println("ERROR: User already exists in database! Try a different username.");
@@ -51,7 +56,9 @@ public class database {
             return null;
         }
     }
-
+//login function
+//searches database for inputted username
+//if password correct, then login proceeds 
     public static User logIn(String user, String pass){
         database dBController = new database();
         MongoDatabase mongoDB = dBController.mongoClient.getDatabase("questionGame");
@@ -80,7 +87,7 @@ public class database {
         }
         
     }
-
+//method that returns leaderboard once the quiz is over
     public static List<Document> getAllUsers() {
         System.out.println("Getting all users...");
         database dBController = new database();
@@ -92,7 +99,7 @@ public class database {
 
         return results;
     }
-
+//method that updates database on users score
     public static void updateUser(User user){
         database dBController = new database();
         MongoDatabase mongoDB = dBController.mongoClient.getDatabase("questionGame");

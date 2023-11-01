@@ -5,8 +5,9 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class modeController {
-
+//method for sorting through questions
     public static Question[] fetchSpecificQuestions(topic topic, difficulty difficulty, Question[] questions){
+        //create questions array
             Question[] sortedQuestions = {};
             for(int i=0; i<questions.length; i++){
                 if(topic != null && difficulty != null){ // if searching by both
