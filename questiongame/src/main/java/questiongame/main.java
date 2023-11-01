@@ -25,9 +25,7 @@ public class main {
                     "Who is the knight, who is the knave, and who is the spy?\r\n" + //
                     "", "4", new String[]{"A: Knight, B:Knave, C:Spy", "A:Spy, B:Knight, C:Knave", "A:Knave, B:Spy, C:Knight", "A:Knight, B:Spy, C:Knave"}),
             //need to insert matrix image in question on next line
-            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.EXPERT, "Find B when [ 3,7 \\n" + //
-                    " 9,3] *B = [ 2,8 \\n" + //
-                    " 7,10] ", "2", new String[]{"[5/3, -5/27 \n 11/6, -1]", "[-5/3, 5/27\n -11/6, 1]", "[-3/5, -27/5 \n 6/11 1]", "[-5/3, 5/27 \n -11/6, -1]"}),
+            new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.EXPERT, "Find B when [ 3, 7 * B = [ 2, 8\n \t9, 3 ] \t\t 7, 6 ]", "2", new String[]{"[5/3, -5/27 \n 11/6, -1]", "[35/27, 14/27\n -1/9, 3/2]", "[-3/5, -27/5 \n 6/11 1]", "[-5/3, 5/27 \n -11/6, -1]"}),
             //Computer Science
             //Novice
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.NOVICE, "-\tWhich option best desribes Backus Naur Form", "2", new String[]{"Binary code written in a human readable form", "Defines the grammar for a programming language", "Defines the semantics of a program", "The infima of a lattice"}),

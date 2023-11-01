@@ -71,6 +71,8 @@ public class modeController {
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
+        System.out.println(sortedQ.toString());
+
         for(Question q : sortedQ){ // loop through selected questions
             printQuestion(q);
             String ansString = scanner.nextLine();
@@ -80,7 +82,6 @@ public class modeController {
                 correct++;
             } else{
                 System.out.println("Incorrect!\n");
-                break;
             }
         }
 
