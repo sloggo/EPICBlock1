@@ -8,8 +8,6 @@ import org.bson.Document;
 public class main {
     
     public static void main(String[] args){
-        System.out.println("WELCOME TO QUIZWIZZ!");
-        System.out.println("Copyright 2023 - KISS Solutions Plc");
 
         Question[] Questions = {
             //Discrete Maths questions 74
@@ -54,8 +52,15 @@ public class main {
         boolean loggedIn = false;
 
         while(!loggedIn){
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            System.out.println("WELCOME TO QUIZWIZZ!");
+            System.out.println("Copyright 2023 - KISS Solutions Plc");
+
             User user = accountController.menu();
             if(user != null){
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
                 System.out.println("Welcome "+user.username+"!");
                 loggedIn = true;
                 commandLineMenu.gameModeMenu(Questions, user);
