@@ -38,21 +38,16 @@ public class accountController {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a username: ");
         String newUserName = scanner.nextLine();
+
+        System.out.println("Choose a password: ");
+        String newPassword = scanner.nextLine();
         //printing an error if the user does not input anything for username or password
-        if (newUserName.equals("")){
-            System.out.println("Error. Please input a username.");
-        }else {
-            System.out.println("Choose a password: ");
-            String newPassword = scanner.nextLine();
-
-            if (newPassword.equals("")){
-            System.out.println("Error. Please input a password.");
-            }else {
-                System.out.println("Signing Up...");
-
-                return database.createUser(newUserName, newPassword); // creates new user
-            }
-        } 
+        if (newUserName != "" && newPassword != ""){
+            System.out.print("Logging in...");
+            return database.logIn(newUserName, newPassword); // logs into existing user
+        }else { 
+            System.out.println("Error. Please enter your username and password");
+        }
 
         return null;
 
@@ -62,18 +57,14 @@ public class accountController {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your username");
         String username = scanner.nextLine();
-        if (username == ""){
-            System.out.println("Error. Please enter your username");
-        }else {
-            System.out.println("Enter your password: ");
-            String password = scanner.nextLine();
 
-            if (password == ""){
-                System.out.println("Error. Please enter your password");
-            }else {
-                System.out.print("Logging in...");
-                return database.logIn(username, password); // logs into existing user
-            }
+        System.out.println("Enter your password: ");
+        String password = scanner.nextLine();
+        if (username != "" && password != ""){
+            System.out.print("Logging in...");
+            return database.logIn(username, password); // logs into existing user
+        }else { 
+            System.out.println("Error. Please enter your username and password");
         }
         return null;
     }

@@ -36,7 +36,7 @@ public class modeController {
 
             for(String ans: question.options){
                 int index = Arrays.asList(question.options).indexOf(ans);
-                System.out.print(index+ " "+ans+"\t");
+                System.out.print((index+1)+ ": "+ans+"\t");
             }
             System.out.println("");
     }
@@ -72,9 +72,8 @@ public class modeController {
         for(Question q : sortedQ){ // loop through selected questions
             printQuestion(q);
             String ansString = scanner.nextLine();
-            char ans = ansString.charAt(0);
 
-            if(ans == q.answer){
+            if(ansString == q.answer){
                 System.out.println("Correct!");
                 correct++;
             } else{
@@ -101,9 +100,8 @@ public class modeController {
 
             printQuestion(randomQ);
                 String ansString = scanner.nextLine();
-                char ans = ansString.charAt(0);
 
-                if(ans == randomQ.answer){
+                if(ansString == randomQ.answer){
                     System.out.println("Correct!");
                     correct++;
                 } else{
@@ -132,9 +130,8 @@ public class modeController {
 
             printQuestion(randomQ);
             String ansString = scanner.nextLine();
-            char ans = ansString.charAt(0);
 
-            if(ans == randomQ.answer){
+            if(ansString == randomQ.answer){
                 System.out.println("Correct!");
                 round++;
                 System.out.print("\033[H\033[2J");

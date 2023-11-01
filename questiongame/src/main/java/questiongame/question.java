@@ -6,10 +6,10 @@ public class Question {
     topic topic;
     difficulty difficulty;
     String question;
-    char answer;
+    String answer;
     String[] options;
 
-    public Question(topic topic, difficulty difficulty, String question, char answer, String[] options){
+    public Question(topic topic, difficulty difficulty, String question, String answer, String[] options){
         this.topic = topic;
         this.difficulty = difficulty;
         this.question = question;
