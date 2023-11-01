@@ -52,9 +52,7 @@ public class main {
         boolean loggedIn = false;
 
         while(!loggedIn){
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
-            System.out.println("WELCOME TO QUIZWIZZ!");
+            System.out.println("\n\nWELCOME TO QUIZWIZZ!");
             System.out.println("Copyright 2023 - KISS Solutions Plc");
 
             User user = accountController.menu();

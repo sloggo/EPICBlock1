@@ -15,8 +15,7 @@ public class score{
         // Calculating the mean
         double mean = (double) sum / userScores.size();
 
-        // Printing the mean
-        System.out.println("Mean of the array: " + mean);
+        // Returning the mean
         return mean;
     }
     public static double medianCalculator(List<Integer> userScores){
@@ -31,8 +30,7 @@ public class score{
             // If the length is odd, pick the middle element
             median = userScores.get(length/2);
         }
-        // Print the median
-        System.out.println("Median of the array: " + median);
+        // Returning the median
         return median;
 }
     public static double standardDeviation(List<Integer> userScores){
@@ -47,8 +45,7 @@ public class score{
         // Step 3: Calculate the standard deviation (square root of the variance)
         double standardDeviation = Math.sqrt(variance);
 
-        // Print the standard deviation
-        System.out.println("Standard Deviation of the array: " + standardDeviation);
+        // Return the standard deviation
         return standardDeviation;
     }
 

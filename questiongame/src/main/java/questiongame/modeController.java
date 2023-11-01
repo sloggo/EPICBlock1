@@ -32,6 +32,7 @@ public class modeController {
     }
 
     public static void printQuestion(Question question){
+        System.out.println("------------------------------------------------------");
         System.out.println(question.question);
         System.out.println("");
 
@@ -74,11 +75,11 @@ public class modeController {
             printQuestion(q);
             String ansString = scanner.nextLine();
 
-            if(ansString == q.answer){
-                System.out.println("Correct!");
+            if(ansString.equals(q.answer)){
+                System.out.println("Correct!\n");
                 correct++;
             } else{
-                System.out.println("Incorrect!");
+                System.out.println("Incorrect!\n");
                 break;
             }
         }
@@ -102,14 +103,14 @@ public class modeController {
             printQuestion(randomQ);
             String ansString = scanner.nextLine();
 
-            if(ansString == randomQ.answer){
-                System.out.println("Correct!");
+            if(ansString.equals(randomQ.answer)){
+                System.out.println("Correct!\n");
                 correct++;
             } else{
-                System.out.println("Incorrect!");
+                System.out.println("Incorrect!\n");
             }
         }
-        
+
             System.out.print("\033[H\033[2J");
             System.out.flush();
             finishedQuiz(user, correct);
@@ -133,13 +134,11 @@ public class modeController {
             printQuestion(randomQ);
             String ansString = scanner.nextLine();
 
-            if(ansString == randomQ.answer){
-                System.out.println("Correct!");
+            if(ansString.equals(randomQ.answer)){
+                System.out.println("Correct!\n");
                 round++;
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
             } else{
-                System.out.println("Incorrect! You lasted "+round+" rounds.");
+                System.out.println("Incorrect! You lasted "+round+" rounds.\n");
                 alive = false;
             }
         }
@@ -148,7 +147,7 @@ public class modeController {
 
     public static void finishedQuiz(User user, int increaseScore){
         score.updateScore(user, increaseScore);
-        leaderboard.generateLeaderboard();
+        leaderboard.generateLeaderboard(increaseScore);
     }
 
 }
