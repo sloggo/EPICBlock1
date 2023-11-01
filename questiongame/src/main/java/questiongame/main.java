@@ -27,15 +27,14 @@ public class main {
             //need to insert matrix image in question on next line
             new Question(questiongame.topic.DISCMATHS, questiongame.difficulty.EXPERT, "Find B when [ 3,7 \\n" + //
                     " 9,3] *B = [ 2,8 \\n" + //
-                    " 7,10] ", "1", new String[]{"opta", "optb", "optc", "optd"}),
+                    " 7,10] ", "2", new String[]{"[5/3, -5/27 \n 11/6, -1]", "[-5/3, 5/27\n -11/6, 1]", "[-3/5, -27/5 \n 6/11 1]", "[-5/3, 5/27 \n -11/6, -1]"}),
             //Computer Science
             //Novice
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.NOVICE, "-\tWhich option best desribes Backus Naur Form", "2", new String[]{"Binary code written in a human readable form", "Defines the grammar for a programming language", "Defines the semantics of a program", "The infima of a lattice"}),
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.NOVICE, "-\tWhat does the term BDD stand for?", "4", new String[]{"Bernhard Description Diagram", "Braunt Design Diagram", "Backus Definition Diagram", "Boolean Decision Diagram"}),
             //Intermediate
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\tWhat is the supremum of this set? A = {1,2,3,4}", "1", new String[]{"4", "2", "3", "1"}),
-            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\t Which of the following is not a predicate", "1", new String[]{"Paris is the capital of France.", "P(x) = {x is a positive integer.}", "S(x, y) = {x is greater than the square of 
-            }", "R(x) = {x is a square number}"}),
+            new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.INTERMEDIATE, "-\t Which of the following is not a predicate", "1", new String[]{"Paris is the capital of France.", "P(x) = {x is a positive integer.}", "S(x, y) = {x is greater than the square of }", "R(x) = {x is a square number}"}),
             //Expert
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhat does ‘reductio ad absurdum’ mean", "2", new String[]{"Proof by induction", "Proof by contradiction", "Direct Proof", "Proof by cases"}),
             new Question(questiongame.topic.COMPSCIFOUND, questiongame.difficulty.EXPERT, "-\tWhich of the following is an example of commutativity ", "3", new String[]{"A u (A n B) = A n B", "A u B = A'(A n B)", "A n B = B n A", "B u B = A n B"}),
