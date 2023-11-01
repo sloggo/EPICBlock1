@@ -34,7 +34,7 @@ public class leaderboard {
         System.out.println("Median score: "+median);
 
         double sd = score.standardDeviation(scores);
-        System.out.println("Standard Deviation score: "+sd);
+        System.out.println("Standard Deviation score: "+sd+"\n");
     }
     public static void getStatistics(){
 
