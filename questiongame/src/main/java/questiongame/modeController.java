@@ -33,10 +33,11 @@ public class modeController {
 
     public static void printQuestion(Question question){
         System.out.println(question.question);
+        System.out.println("");
 
             for(String ans: question.options){
                 int index = Arrays.asList(question.options).indexOf(ans);
-                System.out.print((index+1)+ ": "+ans+"\t");
+                System.out.println((index+1)+ ": "+ans+"\t");
             }
             System.out.println("");
     }
@@ -99,15 +100,16 @@ public class modeController {
             Question randomQ = questions[randomIndex];
 
             printQuestion(randomQ);
-                String ansString = scanner.nextLine();
+            String ansString = scanner.nextLine();
 
-                if(ansString == randomQ.answer){
-                    System.out.println("Correct!");
-                    correct++;
-                } else{
-                    System.out.println("Incorrect!");
-                }
+            if(ansString == randomQ.answer){
+                System.out.println("Correct!");
+                correct++;
+            } else{
+                System.out.println("Incorrect!");
             }
+        }
+        
             System.out.print("\033[H\033[2J");
             System.out.flush();
             finishedQuiz(user, correct);
