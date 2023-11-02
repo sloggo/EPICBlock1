@@ -1,5 +1,5 @@
 package questiongame;
-//importing scanner
+
 import java.util.Scanner;
 
 import org.bson.Document;
@@ -19,7 +19,6 @@ public class commandLineMenu {
         } else {
             System.out.println("Invalid input");
         }
-        scanner.close();
     }
 
 }

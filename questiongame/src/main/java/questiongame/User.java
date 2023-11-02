@@ -1,7 +1,7 @@
 package questiongame;
 
 import org.bson.types.ObjectId;
-//user class
+
 public class User {
     String userId;
     String username;

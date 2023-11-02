@@ -87,7 +87,6 @@ public class modeController {
         }
 
         finishedQuiz(user, correct);
-        scanner.close();
     }
 
     public static void randomMode(Question[] questions, User user){
@@ -117,7 +116,6 @@ public class modeController {
             System.out.print("\033[H\033[2J");
             System.out.flush();
             finishedQuiz(user, correct);
-            scanner.close();
     }
 //sudden death method
     public static void suddenDeath(Question[] questions, User user){
@@ -147,7 +145,6 @@ public class modeController {
             }
         }
         finishedQuiz(user, round);
-        scanner.close();
     }
 //when quiz finished, leaderboard is generated
     public static void finishedQuiz(User user, int increaseScore){
