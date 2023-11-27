@@ -26,6 +26,8 @@ public class score{
         if (length % 2 == 0) {
             // If the length is even, average the middle two elements
             median = (double) (userScores.get(userScores.size() / 2 - 1) + userScores.get(userScores.size() / 2) / 2);
+           // median = (double) (userScores.get(userScores.size() / 2 - 1) + userScores.get(userScores.size() / 2)) / 2;
+
         } else {
             // If the length is odd, pick the middle element
             median = userScores.get(length/2);

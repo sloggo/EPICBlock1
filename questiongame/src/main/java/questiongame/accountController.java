@@ -14,7 +14,7 @@ import com.mongodb.client.MongoDatabase;
 
 //creating the main class
 public class accountController {
-    
+    //method for initial menu, offers choice between sign-up or log-in
     public static User menu(){
         Scanner scanner = new Scanner(System.in);
         //offering the user the choice to sign up or login

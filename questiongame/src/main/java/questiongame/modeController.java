@@ -31,7 +31,7 @@ public class modeController {
             System.out.println(sortedQuestions.toString());
             return sortedQuestions;
     }
-
+//nethod for printing questions
     public static void printQuestion(Question question){
         System.out.println("------------------------------------------------------");
         System.out.println(question.question);
@@ -43,10 +43,9 @@ public class modeController {
             }
             System.out.println("");
     }
-
+//varying difficulty mode method
     public static void difficultyMode(Question[] questions, User user){
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        gameLogic.clearConsole();
         int correct = 0;
 
         Scanner scanner = new Scanner(System.in);
@@ -69,8 +68,7 @@ public class modeController {
         }
 
         Question[] sortedQ = fetchSpecificQuestions(null, difficultySelection, questions);
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        gameLogic.clearConsole();
 
         System.out.println(sortedQ.toString());
 
@@ -88,10 +86,9 @@ public class modeController {
 
         finishedQuiz(user, correct);
     }
-
+//random mode method
     public static void randomMode(Question[] questions, User user){
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        gameLogic.clearConsole();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Random Mode!");
         int correct = 0;
@@ -113,14 +110,12 @@ public class modeController {
             }
         }
 
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
+            gameLogic.clearConsole();
             finishedQuiz(user, correct);
     }
-//sudden death method
+//sudden death mode method
     public static void suddenDeath(Question[] questions, User user){
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        gameLogic.clearConsole();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Sudden Death Mode!");
 
@@ -140,7 +135,7 @@ public class modeController {
                 System.out.println("Correct!\n");
                 round++;
             } else{
-                System.out.println("Incorrect! You lasted "+round+" rounds.\n");
+                System.out.println("Incorrect! You lasted " + round + " rounds.\n");
                 alive = false;
             }
         }
