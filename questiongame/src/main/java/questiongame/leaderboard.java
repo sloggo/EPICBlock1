@@ -14,8 +14,7 @@ public class leaderboard {
         List<Document> userArray = database.getAllUsers();
 
         // Convert the list to an array
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        gameLogic.clearConsole();
         System.out.println("\n\tLEADERBOARD - You got "+userScore+" score!\n");
         System.out.println("Username \t\t Score");
         System.out.println("-----------------------------------");

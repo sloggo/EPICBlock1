@@ -1,7 +1,10 @@
 package questiongame;
+import questiongame.topic;
+import questiongame.difficulty;
 import static com.mongodb.client.model.Filters.eq;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.bson.Document;
@@ -19,7 +22,7 @@ import com.mongodb.client.model.Sorts;
 
 public class database {
     // token used to access database
-    String uri = "mongodb+srv://sloggo:sloggo@questiongame.ivpo6ff.mongodb.net/?retryWrites=true&w=majority";
+    String uri = "mongodb+srv://patrickwalsh33:IwboA1704!@mysandbox.hjskjgd.mongodb.net/?retryWrites=true&w=majority";
     MongoClient mongoClient = MongoClients.create(uri);
 //creating instance of mongoDB database
 //funtion that creates user when user signs up
@@ -115,5 +118,34 @@ public class database {
 
         ReplaceOptions opts = new ReplaceOptions().upsert(true);
         usersCollection.replaceOne(usernameFilter, newUser, opts);
+    }
+
+    //function for calling question which returns array of questions
+    public static Question[] fetchQuestions(){
+        database dBController = new database();
+        MongoDatabase mongoDB = dBController.mongoClient.getDatabase("questionGame");
+        MongoCollection<Document> qCollection = mongoDB.getCollection("questions");
+
+        List<Document> questions = new ArrayList<>();
+        qCollection.find().into(questions);
+
+        Question[] questionArray = {};
+
+        for(Document question : questions){
+            String questionTxt =  question.get("question").toString();
+            topic topicTxt =  questiongame.topic.valueOf(question.get("topic").toString());
+            difficulty difficultyTxt =  questiongame.difficulty.valueOf(question.get("difficulty").toString());
+            String answerTxt =  question.get("answer").toString();
+            List<String> arrayTxt =  question.getList("options", String.class);
+            String[] optionsTxt = arrayTxt.toArray(new String[0]);
+
+            Question questionClass = new Question(topicTxt, difficultyTxt, questionTxt, answerTxt, optionsTxt); 
+            int arrayLength = questionArray.length;
+            questionArray = Arrays.copyOf(questionArray, arrayLength+1);
+            questionArray[arrayLength] = questionClass;
+
+        }
+
+        return questionArray;
     }
 }

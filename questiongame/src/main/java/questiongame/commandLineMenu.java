@@ -11,7 +11,7 @@ public class commandLineMenu {
         System.out.println("Choose a game mode: Enter 1 for Random Quiz , 2 for Difficulty Based Quiz, or 3 for Sudden Death");
         int gameModeChoice = scanner.nextInt();
         if (gameModeChoice == 1){
-            modeController.randomMode(Questions, user);
+            modeController.randomMode(Questions, user,6);
         }else if (gameModeChoice == 2){
             modeController.difficultyMode(Questions, user);
         }else if (gameModeChoice == 3){

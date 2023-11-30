@@ -31,7 +31,7 @@ public class modeController {
             System.out.println(sortedQuestions.toString());
             return sortedQuestions;
     }
-//nethod for printing questions
+//method for printing questions
     public static void printQuestion(Question question){
         System.out.println("------------------------------------------------------");
         System.out.println(question.question);
@@ -87,13 +87,13 @@ public class modeController {
         finishedQuiz(user, correct);
     }
 //random mode method
-    public static void randomMode(Question[] questions, User user){
+    public static void randomMode(Question[] questions, User user, int amountOfQuestions){
         gameLogic.clearConsole();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Random Mode!");
         int correct = 0;
-
-        for(int i = 0; i<6; i++){
+    
+        for(int i = 0; i<amountOfQuestions; i++){
             int questionLength = questions.length;
             Random random = new Random();
             int randomIndex = random.nextInt(questionLength);
